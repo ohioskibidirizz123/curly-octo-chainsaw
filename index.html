@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Status:</title>
+    <title>Website Status</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Fullscreen YouTube Background -->
+
+    <!-- Fullscreen Background (YouTube Video) -->
     <div class="background-container">
-        <iframe class="youtube-background" 
-                src="https://www.youtube.com/embed/YlSocX90vuY?autoplay=1&loop=1&playlist=YlSocX90vuY&mute=1&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3" 
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe class="youtube-background" src="https://www.youtube.com/embed/YlSocX90vuY?autoplay=1&mute=1&controls=0&loop=1&playlist=YlSocX90vuY" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
 
     <!-- Main Content -->
     <div class="content">
-        <h1>Website Status:</h1>
+        <h1>Website Status</h1>
         
-        <!-- Status Indicator -->
-        <div id="status" class="status">Loading...</div>
+        <!-- Status Section (Granite Box) -->
+        <div class="status-section">
+            <div id="status-text">Current Status</div>
+            <div id="status" class="green">Up</div> <!-- Change class to "green", "red", or "yellow" dynamically -->
+        </div>
 
-        <!-- Link to Another Website -->
-        <a id="website-link" href="#" target="_blank">Visit Website</a>
+        <!-- Visit Website Button -->
+        <a id="website-link" href="https://example.com" target="_blank">Visit Another Website</a>
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
