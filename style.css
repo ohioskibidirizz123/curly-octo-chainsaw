@@ -40,7 +40,7 @@ body, html {
 /* Main container for content */
 .content {
     z-index: 1;
-    max-width: 600px; /* Limit content width */
+    max-width: 600px;
     padding: 20px;
 }
 
@@ -124,21 +124,4 @@ h1 {
 #website-link:active {
     transform: translateY(2px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-form {
-    margin-top: 20px;
-}
-
-/* Status colors */
-.green {
-    color: green;
-}
-
-.yellow {
-    color: yellow;
-}
-
-.red {
-    color: red;
 }
