@@ -10,8 +10,7 @@
 
     <!-- Fullscreen Video Background -->
     <div class="background-container">
-        <video class="video-background" autoplay loop muted>
-            <!-- Direct video link with ?raw=1 -->
+        <video class="video-background" autoplay loop muted id="background-video">
             <source src="https://www.dropbox.com/scl/fi/hu43awxq63joun47xxyxm/Pooh-Shiesty-Back-In-Blood-feat.-Lil-Durk-Official-Music-Video-copy.mp4?rlkey=7le3ajd50w30rs8dr2x9sgv57&e=1&st=5peurswk&raw=1" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -21,17 +20,35 @@
     <div class="content">
         <h1>Website Status</h1>
 
+        <!-- Status Box -->
         <div class="status-section">
             <div id="status-text">Current Status</div>
             <div class="status-circle-wrapper">
-                <div id="status" class="yellow"></div> <!-- Green status circle -->
-                <div id="status-text-below">Down for maintenance</div> <!-- Status text below the circle -->
+                <div id="status" class="yellow"></div> <!-- Status Circle -->
+                <div id="status-text-below">Down for maintenance</div> <!-- Status Text Below the Circle -->
             </div>
         </div>
 
+        <!-- Visit Website Button -->
         <a id="website-link" href="https://example.com" target="_blank">Visit Our Website 🔥</a>
     </div>
 
+    <!-- JavaScript for Fullscreen Video Toggle -->
+    <script>
+        const video = document.getElementById('background-video');
+
+        video.addEventListener('click', () => {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { /* Firefox */
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { /* IE/Edge */
+                video.msRequestFullscreen();
+            }
+        });
+    </script>
+
 </body>
 </html>
-
