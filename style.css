@@ -62,21 +62,29 @@ form {
     margin-top: 20px;
 }
 
-select, button {
-    padding: 10px;
-    font-size: 1em;
-    margin: 5px;
-}
-
+/* Gradient buttons */
 button {
-    background-color: #ff9800;
+    padding: 15px 30px;
+    font-size: 1.2em;
     border: none;
     color: white;
+    background: linear-gradient(45deg, #ff9800, #f57c00); /* Gradient color */
     cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition */
+    margin: 10px 0;
 }
 
 button:hover {
-    background-color: #f57c00;
+    background: linear-gradient(45deg, #f57c00, #ff9800); /* Reverse the gradient on hover */
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+}
+
+button:active {
+    transform: translateY(2px); /* Button press effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Less shadow when pressed */
 }
 
 /* Status colors */
@@ -90,5 +98,17 @@ button:hover {
 
 .red {
     color: red;
+}
+
+/* Hide YouTube video on smaller screens */
+@media (max-width: 768px) {
+    .background-container {
+        display: none;  /* Hides the YouTube video on mobile */
+    }
+
+    /* Optionally, you can add a fallback background (like a solid color) for mobile */
+    body {
+        background-color: #333; /* Dark background color */
+    }
 }
 
