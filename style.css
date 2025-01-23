@@ -38,53 +38,84 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
+/* 3D "Website Status" Text */
 h1 {
-    font-size: 3em;
+    font-size: 6em; /* Make text larger */
     margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7), -1px -1px 5px rgba(255, 255, 255, 0.5); /* 3D effect */
 }
 
+/* Granite block under "Website Status" */
+.granite-block {
+    background: linear-gradient(45deg, #333, #555);
+    padding: 20px 50px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px;
+}
+
+/* Status circle */
 #status {
     font-size: 1.5em;
     margin: 20px 0;
+    padding: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    line-height: 90px; /* Vertically center text */
+    background-color: #222;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
 }
 
+#status.green {
+    background-color: #32CD32; /* Green when up */
+    box-shadow: 0 0 20px #32CD32; /* Neon glow */
+}
+
+#status.red {
+    background-color: #FF6347; /* Red when down */
+    box-shadow: 0 0 20px #FF6347; /* Neon glow */
+}
+
+#status.yellow {
+    background-color: #FFD700; /* Yellow when working */
+    box-shadow: 0 0 20px #FFD700; /* Neon glow */
+}
+
+/* Gradient "Visit Another Website" Button */
 #website-link {
-    color: #ff9800;
-    text-decoration: none;
+    color: white;
+    background: linear-gradient(45deg, #ffffff, #f0f0f0); /* Gradient from white */
+    padding: 15px 30px;
     font-size: 1.2em;
-    margin-bottom: 20px;
+    text-decoration: none;
     display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+#website-link:hover {
+    background: linear-gradient(45deg, #f0f0f0, #ffffff); /* Reverse gradient on hover */
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+}
+
+#website-link:active {
+    transform: translateY(2px); /* Button press effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Less shadow when pressed */
 }
 
 form {
     margin-top: 20px;
-}
-
-/* Gradient buttons */
-button {
-    padding: 15px 30px;
-    font-size: 1.2em;
-    border: none;
-    color: white;
-    background: linear-gradient(45deg, #ff9800, #f57c00); /* Gradient color */
-    cursor: pointer;
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
-    transition: all 0.3s ease; /* Smooth transition */
-    margin: 10px 0;
-}
-
-button:hover {
-    background: linear-gradient(45deg, #f57c00, #ff9800); /* Reverse the gradient on hover */
-    transform: translateY(-3px); /* Lift effect */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow */
-}
-
-button:active {
-    transform: translateY(2px); /* Button press effect */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Less shadow when pressed */
 }
 
 /* Status colors */
@@ -110,5 +141,8 @@ button:active {
     body {
         background-color: #333; /* Dark background color */
     }
-}
 
+    h1 {
+        font-size: 4em; /* Adjust text size on mobile */
+    }
+}
