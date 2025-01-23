@@ -1,4 +1,3 @@
-
 /* General styles */
 * {
     margin: 0;
@@ -25,7 +24,7 @@ body, html {
     width: 100%;
     height: 100%;
     z-index: -1;
-    overflow: hidden; /* Prevent overflow */
+    overflow: hidden;
 }
 
 .video-background {
@@ -34,26 +33,26 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Make the video fill the screen */
+    object-fit: cover; /* Ensures the video fills the screen */
     pointer-events: none;
 }
 
-/* Main container for the content */
+/* Main container for content */
 .content {
     z-index: 1;
-    max-width: 600px; /* Limit width for readability */
+    max-width: 600px; /* Limit content width */
     padding: 20px;
 }
 
 /* 3D "Website Status" Text */
 h1 {
-    font-size: 6em; /* Make text larger */
+    font-size: 6em;
     margin-bottom: 20px;
     color: #fff;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7), -1px -1px 5px rgba(255, 255, 255, 0.5); /* 3D effect */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7), -1px -1px 5px rgba(255, 255, 255, 0.5);
 }
 
-/* Status Section - White Gradient Granite Box */
+/* Status Section (White Gradient Box) */
 .status-section {
     background: linear-gradient(45deg, #fff, #f0f0f0);
     padding: 40px 30px;
@@ -70,7 +69,7 @@ h1 {
     color: #333;
 }
 
-/* Status circle below the status text */
+/* Status Circle */
 #status {
     font-size: 1.5em;
     padding: 20px;
@@ -78,34 +77,34 @@ h1 {
     border-radius: 50%;
     width: 80px;
     height: 80px;
-    line-height: 50px; /* Vertically center text */
+    line-height: 50px;
     background-color: #222;
     text-align: center;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
-    margin-top: 20px; /* Push the circle below the status text */
+    margin-top: 20px;
 }
 
 /* Status circle colors */
 #status.green {
-    background-color: #32CD32; /* Green when up */
-    box-shadow: 0 0 20px #32CD32; /* Neon glow */
+    background-color: #32CD32;
+    box-shadow: 0 0 20px #32CD32;
 }
 
 #status.red {
-    background-color: #FF6347; /* Red when down */
-    box-shadow: 0 0 20px #FF6347; /* Neon glow */
+    background-color: #FF6347;
+    box-shadow: 0 0 20px #FF6347;
 }
 
 #status.yellow {
-    background-color: #FFD700; /* Yellow when working */
-    box-shadow: 0 0 20px #FFD700; /* Neon glow */
+    background-color: #FFD700;
+    box-shadow: 0 0 20px #FFD700;
 }
 
 /* Gradient "Visit Another Website" Button */
 #website-link {
-    color: black; /* Text color set to black */
-    background: linear-gradient(45deg, #ffffff, #f0f0f0); /* Gradient from white */
+    color: black;
+    background: linear-gradient(45deg, #ffffff, #f0f0f0);
     padding: 15px 30px;
     font-size: 1.2em;
     text-decoration: none;
@@ -117,14 +116,14 @@ h1 {
 }
 
 #website-link:hover {
-    background: linear-gradient(45deg, #f0f0f0, #ffffff); /* Reverse gradient on hover */
-    transform: translateY(-3px); /* Lift effect */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+    background: linear-gradient(45deg, #f0f0f0, #ffffff);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 #website-link:active {
-    transform: translateY(2px); /* Button press effect */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Less shadow when pressed */
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 form {
@@ -142,20 +141,4 @@ form {
 
 .red {
     color: red;
-}
-
-/* Hide YouTube video on smaller screens */
-@media (max-width: 768px) {
-    .background-container {
-        display: none;  /* Hides the video on mobile */
-    }
-
-    /* Optionally, you can add a fallback background (like a solid color) for mobile */
-    body {
-        background-color: #333; /* Dark background color */
-    }
-
-    h1 {
-        font-size: 4em; /* Adjust text size on mobile */
-    }
 }
