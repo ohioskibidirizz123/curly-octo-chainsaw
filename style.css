@@ -17,24 +17,26 @@ body, html {
     overflow: hidden; /* Prevent scrolling */
 }
 
-/* Fullscreen Video Background */
+/* Video Background Container with Specific Dimensions (14.2" x 8") */
 .background-container {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;  /* Use the full viewport width */
-    height: 100vh; /* Use the full viewport height */
+    top: 50%;
+    left: 50%;
+    width: 1363.2px;  /* 14.2 inches in pixels */
+    height: 768px;     /* 8 inches in pixels */
+    transform: translate(-50%, -50%); /* Center it on the screen */
     z-index: -1;
     overflow: hidden;
 }
 
+/* Video itself: Stretch to fit container */
 .video-background {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Stretch the video to full width */
-    height: 100%; /* Stretch the video to full height */
-    object-fit: cover; /* Ensures the video covers the entire screen without stretching */
+    width: 100%; /* Stretch to fit the width of the container */
+    height: 100%; /* Stretch to fit the height of the container */
+    object-fit: cover; /* Ensures the video covers the entire container area */
     pointer-events: none; /* Ensures it doesn't block other elements */
 }
 
