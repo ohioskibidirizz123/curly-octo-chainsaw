@@ -42,6 +42,7 @@ body, html {
     z-index: 1;
     max-width: 600px;
     padding: 20px;
+    color: white;
 }
 
 /* 3D "Website Status" Text */
@@ -69,7 +70,14 @@ h1 {
     color: #333;
 }
 
-/* Status Circle */
+/* Status Circle Wrapper (Holds circle and text) */
+.status-circle-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Status circle */
 #status {
     font-size: 1.5em;
     padding: 20px;
@@ -82,7 +90,13 @@ h1 {
     text-align: center;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
-    margin-top: 20px;
+    margin-bottom: 10px; /* Add margin to space out from the text */
+}
+
+/* Status text below the circle */
+#status-text-below {
+    font-size: 1.2em;
+    color: #333;
 }
 
 /* Status circle colors */
