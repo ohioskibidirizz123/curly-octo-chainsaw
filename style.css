@@ -17,35 +17,35 @@ body, html {
     overflow: hidden; /* Prevent scrolling */
 }
 
-/* Video Background Container with Specific Dimensions (14.2" x 8") */
+/* Video Background Container */
 .background-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 1363.2px;  /* 14.2 inches in pixels */
-    height: 768px;     /* 8 inches in pixels */
-    transform: translate(-50%, -50%); /* Center it on the screen */
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
     z-index: -1;
     overflow: hidden;
 }
 
-/* Video itself: Stretch to fit container */
+/* Video Styling */
 .video-background {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Stretch to fit the width of the container */
-    height: 100%; /* Stretch to fit the height of the container */
-    object-fit: cover; /* Ensures the video covers the entire container area */
-    pointer-events: none; /* Ensures it doesn't block other elements */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /* Prevent video from blocking interaction with other elements */
 }
 
-/* Main content styling */
+/* Main Content Styling */
 .content {
     z-index: 1;
+    color: white;
     max-width: 600px;
     padding: 20px;
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,7 +53,7 @@ body, html {
     text-align: center;
 }
 
-/* 3D "Website Status" Text */
+/* 3D Website Status Text */
 h1 {
     font-size: 6em;
     margin-bottom: 20px;
@@ -61,7 +61,7 @@ h1 {
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7), -1px -1px 5px rgba(255, 255, 255, 0.5);
 }
 
-/* Status Section (White Gradient Box) */
+/* Status Section Box */
 .status-section {
     background: linear-gradient(45deg, #fff, #f0f0f0);
     padding: 40px 30px;
@@ -69,23 +69,16 @@ h1 {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     display: inline-block;
     margin-top: 40px;
+    text-align: center;
 }
 
-/* Website Status Text */
-#status-text {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Status Circle Wrapper (Holds circle and text) */
+/* Status Circle Styling */
 .status-circle-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Status circle */
 #status {
     font-size: 1.5em;
     padding: 20px;
@@ -94,36 +87,26 @@ h1 {
     width: 80px;
     height: 80px;
     line-height: 50px;
-    background-color: #222;
+    background-color: #FFD700; /* Default Yellow */
     text-align: center;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
-    margin-bottom: 10px; /* Add margin to space out from the text */
+    margin-bottom: 10px; /* Space between circle and text */
 }
 
-/* Status text below the circle */
+#status-text {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Status Text Below Circle */
 #status-text-below {
     font-size: 1.2em;
     color: #333;
 }
 
-/* Status circle colors */
-#status.green {
-    background-color: #32CD32;
-    box-shadow: 0 0 20px #32CD32;
-}
-
-#status.red {
-    background-color: #FF6347;
-    box-shadow: 0 0 20px #FF6347;
-}
-
-#status.yellow {
-    background-color: #FFD700;
-    box-shadow: 0 0 20px #FFD700;
-}
-
-/* Gradient "Visit Another Website" Button */
+/* Button Styling */
 #website-link {
     color: black;
     background: linear-gradient(45deg, #ffffff, #f0f0f0);
@@ -148,16 +131,18 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Centering the content */
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Adjust Status Circle Colors */
+#status.green {
+    background-color: #32CD32;
+    box-shadow: 0 0 20px #32CD32;
 }
 
-/* Make content boxes center themselves */
-.status-section {
-    margin: 20px;
-    text-align: center;
+#status.red {
+    background-color: #FF6347;
+    box-shadow: 0 0 20px #FF6347;
+}
+
+#status.yellow {
+    background-color: #FFD700;
+    box-shadow: 0 0 20px #FFD700;
 }
