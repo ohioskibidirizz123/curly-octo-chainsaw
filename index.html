@@ -10,7 +10,7 @@
 
     <!-- Fullscreen Video Background -->
     <div class="background-container">
-        <video class="video-background" autoplay loop muted id="background-video">
+        <video class="video-background" autoplay loop muted>
             <source src="https://www.dropbox.com/scl/fi/hu43awxq63joun47xxyxm/Pooh-Shiesty-Back-In-Blood-feat.-Lil-Durk-Official-Music-Video-copy.mp4?rlkey=7le3ajd50w30rs8dr2x9sgv57&e=1&st=5peurswk&raw=1" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -30,25 +30,38 @@
         </div>
 
         <!-- Visit Website Button -->
-        <a id="website-link" href="https://example.com" target="_blank">Visit Our Website 🔥</a>
+        <a id="website-link" href="#" onclick="goToFullscreenImage(); return false;">Visit Our Website 🔥</a>
     </div>
 
-    <!-- JavaScript for Fullscreen Video Toggle -->
-    <script>
-        const video = document.getElementById('background-video');
+    <!-- Fullscreen Image (Hidden by Default) -->
+    <div id="fullscreen-image" class="fullscreen-image" style="display: none;">
+        <img src="https://www.zdnet.com/a/img/resize/e2af51bd9a6f18ec0e8f21b019d652d2892e5dfb/2020/11/05/e9631f2a-7b82-4b2c-b1bd-236de60765d7/seized.png?auto=webp&width=1280" alt="Fullscreen Image" />
+    </div>
 
-        video.addEventListener('click', () => {
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.mozRequestFullScreen) { /* Firefox */
-                video.mozRequestFullScreen();
-            } else if (video.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-                video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) { /* IE/Edge */
-                video.msRequestFullscreen();
+    <!-- JavaScript for Fullscreen Image and Toolbar Hiding -->
+    <script>
+        function goToFullscreenImage() {
+            // Hide the initial content
+            document.querySelector('.content').style.display = 'none';
+
+            // Show the fullscreen image
+            const fullscreenImage = document.getElementById('fullscreen-image');
+            fullscreenImage.style.display = 'block';
+
+            // Request fullscreen for the image section
+            const elem = document.documentElement; // This will make the entire page fullscreen
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { /* Firefox */
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                elem.msRequestFullscreen();
             }
-        });
+        }
     </script>
 
 </body>
 </html>
+
