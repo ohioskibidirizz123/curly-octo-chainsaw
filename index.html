@@ -8,10 +8,11 @@
 </head>
 <body>
 
-    <!-- Fullscreen Video Background (Dropbox) -->
+    <!-- Fullscreen Video Background -->
     <div class="background-container">
         <video class="video-background" autoplay loop muted>
-            <source src="https://www.dropbox.com/scl/fi/hu43awxq63joun47xxyxm/Pooh-Shiesty-Back-In-Blood-feat.-Lil-Durk-Official-Music-Video-copy.mp4?raw=1" type="video/mp4">
+            <!-- Reference to the video.mp4 file in the assets folder -->
+            <source src="assets/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -19,16 +20,15 @@
     <!-- Main Content -->
     <div class="content">
         <h1>Website Status</h1>
-        
-        <!-- Status Section (Granite Box) -->
+
         <div class="status-section">
             <div id="status-text">Current Status</div>
-            <div id="status" class="green">Up</div> <!-- Change class to "green", "red", or "yellow" dynamically -->
+            <div id="status" class="yellow">Up</div> <!-- Change class to "green", "red", or "yellow" dynamically -->
         </div>
 
-        <!-- Visit Website Button -->
         <a id="website-link" href="https://example.com" target="_blank">Visit Another Website</a>
     </div>
 
 </body>
 </html>
+
