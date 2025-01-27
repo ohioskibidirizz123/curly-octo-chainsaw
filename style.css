@@ -1,4 +1,4 @@
-/* General styles */
+/* General Reset and Basic Styles */
 * {
     margin: 0;
     padding: 0;
@@ -22,20 +22,53 @@ body, html {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Full width of the screen */
-    height: 100vh; /* Full height of the screen */
+    width: 100%;
+    height: 100vh;
     z-index: -1;
 }
 
-/* Video Styling */
 .video-background {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none; /* Prevent video from blocking interaction */
+}
+
+/* Fullscreen Stars Background */
+#background {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw; /* Stretch to fit full viewport width */
-    height: 100vh; /* Stretch to fit full viewport height */
-    object-fit: cover; /* Ensures the video fills the container */
-    pointer-events: none; /* Prevent video from blocking interaction with other elements */
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgb(0, 0, 0), rgb(1, 44, 42));
+    z-index: -2; /* Behind video */
+}
+
+.star {
+    position: absolute;
+    background: rgb(57, 255, 215);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: sparkle 2s infinite, drift linear infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes drift {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(50px, -50px);
+    }
 }
 
 /* Main Content Styling */
@@ -51,86 +84,69 @@ body, html {
     text-align: center;
 }
 
-/* 3D Website Status Text */
-h1 {
-    font-size: 6em;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7), -1px -1px 5px rgba(255, 255, 255, 0.5);
-}
-
-/* Status Section Box */
-.status-section {
-    background: linear-gradient(45deg, #fff, #f0f0f0);
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    display: inline-block;
-    margin-top: 40px;
-    text-align: center;
-}
-
-/* Status Circle Styling */
-.status-circle-wrapper {
+/* Button and Image Styling */
+.image-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-#status {
-    font-size: 1.5em;
-    padding: 20px;
-    display: inline-block;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    line-height: 50px;
-    background-color: #FFD700; /* Default Yellow */
-    text-align: center;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-    margin-bottom: 10px; /* Space between circle and text */
-}
-
-#status-text {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Status Text Below Circle */
-#status-text-below {
-    font-size: 1.2em;
-    color: #333;
-}
-
-/* Button Styling */
-#website-link {
-    color: black;
-    background: linear-gradient(45deg, #ffffff, #f0f0f0);
-    padding: 15px 30px;
-    font-size: 1.2em;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
+.image {
+    width: 250px;
+    height: 250px;
+    border: 2px solid #daf3f1;
+    margin: 40px;
+    padding: 10px;
+    box-sizing: border-box;
     transition: all 0.3s ease;
 }
 
-/* Fullscreen Image Styling */
-.fullscreen-image {
-    position: absolute;
-    top: 0;
+.image:hover {
+    transform: scale(1.1);
+    border-color: #9900ff;
+}
+
+/* Floating Menu */
+.floating-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background-color: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    width: 200px;
+}
+
+.menu-content {
+    padding: 10px;
+}
+
+.close-button {
+    float: right;
+    cursor: pointer;
+    color: #333;
+}
+
+.menu-button {
+    font-family: Arial;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Footer Section */
+.bottom-left {
+    position: fixed;
+    bottom: 0;
     left: 0;
-    width: 100vw; /* Full width of the screen */
-    height: 100vh; /* Full height of the screen */
-    display: none; /* Hidden by default */
-    background-color: black;
-}
-
-.fullscreen-image img {
-    width: 100%; /* Make the image fill the screen */
-    height: 100%;
-    object-fit: cover; /* Ensures the image stretches to fit the screen */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
 }
